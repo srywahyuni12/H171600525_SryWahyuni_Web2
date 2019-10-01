@@ -10,7 +10,5 @@ class KategoriArtikel extends Model
 
     protected $fillable=[
     'nama','user_id'
-    ];
-
-    
+    ];    
 }
