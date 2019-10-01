@@ -8,6 +8,8 @@
                 <div class="card-header">Kategori Berita</div>
                 <div class="card-body">
                 <table class="table table-bordered">
+                     <a href="{!! route('kategori_berita.create') !!}" class="btn btn-primary">Tambah Data</a>
+                <table class="table table-bordered">
                     <thead class="bg-danger">
                         <tr>
                         <th scope="col">Id</th>
@@ -25,7 +27,7 @@
                         <td>{!! $item->users_id !!}</td>
                         <td>{!! $item->created_at->format('d/m/Y H:i:s') !!}</td>
                         <td>
-                            <a href="{!! route('kategori_artikel.show',[$item->id]) !!}">Lihat</a>
+                            <a href="{!! route('kategori_berita.show',[$item->id]) !!}"class="btn btn-sm btn-primary">Lihat</a>
                         </td>
                         </tr>
                         @endforeach
