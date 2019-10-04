@@ -8,9 +8,9 @@
                 <div class="card-header">Kategori Pengumuman</div>
                 <div class="card-body">
                 <table class="table table-bordered">
-                     <a href="{!! route('kategori_pengumuman.create') !!}" class="btn btn-primary">Tambah Data</a>
+                    <a href="{!! route('kategori_pengumuman.create') !!}" class="btn btn-primary">Tambah Data</a>
                 <table class="table table-bordered">
-                    <thead class="bg-success">
+                    <thead class="bg-light">
                         <tr>
                         <th scope="col">Id</th>
                         <th scope="col">Nama</th>
@@ -27,11 +27,11 @@
                         <td>{!! $item->users_id !!}</td>
                         <td>{!! $item->created_at->format('d/m/Y H:i:s') !!}</td>
                         <td>
-                             <a href="{!! route('kategori_pengumuman.show',[$item->id]) !!}"class="btn btn-sm btn-primary">Lihat</a>
+                            <a href="{!! route('kategori_pengumuman.show',[$item->id]) !!}"class="btn btn-sm btn-primary">Lihat</a>
                         </td>
                         </tr>
                         @endforeach
                     </tbody>
                 </table>
         @endsection
-                      
+                        

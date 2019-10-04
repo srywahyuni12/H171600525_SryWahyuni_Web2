@@ -4,10 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class berita extends Model
+class Berita extends Model
 {
-     protected $table='berita';
+    protected $table='berita';
 
-       protected $fillable=['nama','user_id'];
+    	protected $fillable=[
+    		'judul','isi','users_id','kategori_berita_id'
+    	];
+
+    	protected $casts=[ ];
 }
-
