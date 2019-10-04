@@ -4,11 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class galeri extends Model
+class Galeri extends Model
 {
-     protected $table='galeri';
+    protected $table='galeri';
 
-       protected $fillable=['nama','user_id','kategori_galeri_id'
-    ];
+    	protected $fillable=[
+    		'nama','isi','users_id','kategori_galeri_id'
+    	];
+
+    	protected $casts=[ ];
 }
-

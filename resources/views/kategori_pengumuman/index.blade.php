@@ -10,7 +10,7 @@
                 <table class="table table-bordered">
                     <a href="{!! route('kategori_pengumuman.create') !!}" class="btn btn-primary">Tambah Data</a>
                 <table class="table table-bordered">
-                    <thead class="bg-light">
+                    <thead class="bg-success">
                         <tr>
                         <th scope="col">Id</th>
                         <th scope="col">Nama</th>
