@@ -63,4 +63,16 @@ class KategoriBeritaController extends Controller
       $listKategoriBerita->update($input);
       return redirect(route('kategori_berita.index'));
     }
+
+    public function destroy($id){
+       $listKategoriBerita=KategoriBerita::find($id);
+
+        if (empty($listKategoriBerita)){
+            return redirect(route ('kategori_berita.index')); 
+    }
+
+    $listKategoriBerita->delete();
+    return redirect(route('kategori_berita.index'));
+  }
 }
+

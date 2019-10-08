@@ -63,4 +63,16 @@ class KategoriGaleriController extends Controller
       $listKategoriGaleri->update($input);
       return redirect(route('kategori_galeri.index'));
     }
+
+    public function destroy($id){
+       $listKategoriGaleri=KategoriGaleri::find($id);
+
+        if (empty($listKategoriGaleri)){
+            return redirect(route ('kategori_galeri.index')); 
+    }
+
+    $listKategoriGaleri->delete();
+    return redirect(route('kategori_galeri.index'));
+  }
 }
+

@@ -63,4 +63,16 @@ class KategoriPengumumanController extends Controller
       $listKategoriPengumuman->update($input);
       return redirect(route('kategori_pengumuman.index'));
     }
+
+    public function destroy($id){
+       $listKategoriPengumuman=KategoriPengumuman::find($id);
+
+        if (empty($listKategoriPengumuman)){
+            return redirect(route ('kategori_pengumuman.index')); 
+    }
+
+    $listKategoriPengumuman->delete();
+    return redirect(route('kategori_pengumuman.index'));
+  }
 }
+
