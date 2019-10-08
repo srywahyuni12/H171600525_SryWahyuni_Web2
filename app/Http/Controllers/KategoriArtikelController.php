@@ -72,6 +72,14 @@ class KategoriArtikelController extends Controller
     }
 
     $listKategoriArtikel->delete();
-    return redirect(route('kategori_artikel.index'));
+    return redirect(route('kategori_artikel.index'));    
   }
+
+   public function trash(){
+        
+        $listKategoriArtikel=KategoriArtikel::onlyTrashed(); //select * from kategori_artikel
+
+        return view ('kategori_artikel.index',compact('listKategoriArtikel'));
+        //return view ('kategori_artikel.index'->with('data',$listKategoriArtikel);
+    }
 }
