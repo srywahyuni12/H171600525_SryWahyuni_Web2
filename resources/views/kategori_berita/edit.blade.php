@@ -7,9 +7,8 @@
             <div class="card">
                 <div class="card-header bg-info" button class="btn btn-primary">Tambah Kategori Berita</div>
           
-                <div class="card-body">
-                    
-                    {!! Form::open(['route' => 'kategori_berita.store', 'method' => 'post']) !!}
+                <div class="card-body">                   
+                    {!! Form::model($listKategoriBerita, ['route' => ['kategori_berita.update', $listKategoriBerita->id],'method'=>'patch']) !!}
                         
                         @include('kategori_berita.form')
                     
