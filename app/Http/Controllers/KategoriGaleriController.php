@@ -74,5 +74,13 @@ class KategoriGaleriController extends Controller
     $listKategoriGaleri->delete();
     return redirect(route('kategori_galeri.index'));
   }
+
+   public function trash(){
+        
+        $listKategoriGaleri=KategoriGaleri::onlyTrashed(); //select * from kategori_artikel
+
+        return view ('kategori_galeri.index',compact('listKategoriGaleri'));
+        //return view ('kategori_artikel.index'->with('data',$listKategoriArtikel);
+    }
 }
 

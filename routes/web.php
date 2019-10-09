@@ -24,7 +24,11 @@ Route::resource('kategori_artikel','KategoriArtikelController');
 Route::get('kategori_artikel/trash','KategoriArtikelController@trash')->name('kategori_artikel.trash');
 
 Route::resource('kategori_berita','KategoriBeritaController');
+Route::get('kategori_berita/trash','KategoriBeritaController@trash')->name('kategori_berita.trash');
+
 Route::resource('kategori_galeri','KategoriGaleriController');
+Route::get('kategori_galeri/trash','KategoriGaleriController@trash')->name('kategori_galeri.trash');
+
 Route::resource('kategori_pengumuman','KategoriPengumumanController');
 
 
