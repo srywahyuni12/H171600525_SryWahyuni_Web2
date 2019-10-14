@@ -9,7 +9,7 @@
                 <div class="card-body">
                     <a href="{!! route('berita.create') !!}" class="btn btn-primary">Tambah Data</a>
                 <table class="table table-bordered">
-                    <thead class="bg-light">
+                    <thead class="bg-warning">
                         <tr>
                         <th scope="col">ID</th>
                         <th scope="col">Judul</th>
@@ -27,11 +27,21 @@
                         <td>{!! $item->id !!}</td>
                         <td>{!! $item->judul !!}</td>
                         <td>{!! $item->isi !!}</td>
-                        <td>{!! $item->kategori_berita_id !!}</td>
                         <td>{!! $item->users_id !!}</td>
                         <td>{!! $item->created_at->format('d/m/Y H:i:s') !!}</td>
+                        <td>{!! $item->kategori_berita_id !!}</td>
                         <td>
                          <a href="{!! route('berita.show',[$item->id]) !!}"class="btn btn-success">Lihat</a>
+
+                        <a href="{!! route('berita.edit',[$item->id]) !!}" class="btn btn-sm btn-primary">
+                        Ubah</a>
+
+                        {!! Form::open( ['route' => ['berita.destroy', $item->id],'method'=>'delete']) !!}
+
+                        {!! Form::submit('Hapus', ['class'=>'btn btn-sm btn-danger','onclick'=>"return confirm('Apakah anda yakin menghapus data ini ?')"]); !!}
+
+                        {!! Form::close() !!}
+
                         </td>
                         </tr>
                        @endforeach
@@ -43,3 +53,4 @@
 </div>
 </div>
 @endsection
+

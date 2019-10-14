@@ -8,7 +8,7 @@
                 <div class="card-header bg-info" button class="btn btn-primary">Tambah Kategori Galeri</div>
           
                 <div class="card-body">
-                    
+                      
                     {!! Form::open(['route' => 'kategori_galeri.store', 'method' => 'post']) !!}
                         
                         @include('kategori_galeri.form')
@@ -19,4 +19,5 @@
             </div>
         </div>
      </div>
+</div>
 @endsection

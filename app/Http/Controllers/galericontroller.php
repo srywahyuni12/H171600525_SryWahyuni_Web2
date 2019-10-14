@@ -9,11 +9,11 @@ use App\KategoriGaleri;
 class GaleriController extends Controller
 {
     public function index(){
-    	
-    	$listGaleri=Galeri::all(); 
+        
+        $listGaleri=Galeri::all(); 
 
-    	return view ('galeri.index',compact('listGaleri'));
-    	//return view ('artikel.index'->with('data',$listArtikel);
+        return view ('galeri.index',compact('listGaleri'));
+        //return view ('artikel.index'->with('data',$listArtikel);
     }
 
     public function show($id) {
@@ -21,23 +21,58 @@ class GaleriController extends Controller
         //$Artikel=Artikel::where('id',$id)->first();
         $Galeri=Galeri::find($id);
 
+
+        if (empty($listGaleri)){
+            return redirect(route ('galeri.index'));
+        }
+
         return view ('galeri.show', compact('Galeri'));
         
     }
 
     public function create(){
 
-        $KategoriGaleri=KategoriGaleri::pluck('nama','id');
+        $listKategoriGaleri=KategoriGaleri::pluck('nama','id');
         
-        return view('galeri.create', compact('KategoriGaleri'));
+        return view('galeri.create', compact('listKategoriGaleri'));
     }
 
     public function store(Request $request){
 
-        $input=$request->all();
+        $input= $request->all();
 
-        G::create($input);
+        Galeri::create($input);
 
+        return redirect(route('galeri.index'));
+    }
+
+     public function edit($id) {
+        $Galeri= Galeri::find($id);
+        $listKategoriGaleri=KategoriGaleri::pluck('nama','id');
+
+        return view('galeri.edit', compact('Galeri','listKategoriGaleri'));
+    }
+
+    public function update($id,Request $request){
+      $listGaleri=Galeri::find($id);
+      $input=$request->all();
+  
+      if(empty($listGaleri)) {
+        return redirect(route('galeri.index'));
+      }
+
+      $listGaleri->update($input);
+      return redirect(route('galeri.index'));
+    }
+
+    public function destroy($id){
+        $listGaleri=Galeri::find($id);
+
+        if (empty($listGaleri)){
+            return redirect(route ('galeri.index'));
+        }
+
+        $listGaleri->delete();
         return redirect(route('galeri.index'));
     }
 }

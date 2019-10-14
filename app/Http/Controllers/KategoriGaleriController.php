@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\KategoriGaleri;
 
+
 class KategoriGaleriController extends Controller
 {
     public function index(){
@@ -83,4 +84,3 @@ class KategoriGaleriController extends Controller
         //return view ('kategori_artikel.index'->with('data',$listKategoriArtikel);
     }
 }
-

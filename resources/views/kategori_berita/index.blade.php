@@ -40,6 +40,7 @@
                          {!! Form::submit('Hapus', ['class'=>'btn btn-sm btn-danger','onclick'=>"return confirm('Apakah anda yakin menghapus data ini ?')"]); !!}
 
                          {!! Form::close() !!}
+
                         </td>
                         </tr>
                        @endforeach
@@ -51,3 +52,5 @@
 </div>
 </div>
 @endsection
+
+
