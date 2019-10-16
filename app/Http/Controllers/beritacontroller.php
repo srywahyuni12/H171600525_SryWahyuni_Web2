@@ -27,9 +27,9 @@ class BeritaController extends Controller
 
     public function create(){
 
-        $KategoriBerita=KategoriBerita::pluck('nama','id');
+        $listKategoriBerita=KategoriBerita::pluck('nama','id');
         
-        return view('berita.create', compact('KategoriBerita'));
+        return view('berita.create', compact('listKategoriBerita'));
     }
 
     public function store(Request $request){
