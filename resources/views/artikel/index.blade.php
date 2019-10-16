@@ -13,7 +13,7 @@
 
                 </div>
             </div>
-            
+
                 <table class="table table-bordered">
                     <thead class="bg-warning">
                         <tr>
@@ -34,7 +34,7 @@
                         <td>{!! $item->id !!}</td>
                         <td>{!! $item->judul !!}</td>
                         <td>{!! $item->isi !!}</td>
-                        <td>{!! $item->kategori_artikel_id !!}</td>
+                        <td>{!! $item->kategori_berita_id !!}</td>
                         <td>{!! $item->users_id !!}</td>
                         <td>{!! $item->created_at->format('d/m/Y H:i:s') !!}</td>
                         <td>{!! $item->updated_at->format('d/m/Y H:i:s') !!}</td>

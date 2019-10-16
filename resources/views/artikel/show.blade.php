@@ -17,16 +17,22 @@
                          <label  class="col-md-4 col-form-label text-md-right">Judul</label>
                          <label  class="col-md-8 col-form-label text-md-left">{!! $Artikel->judul !!}</label>
                     </div>
-                    
+
+                     <div class="form-group row">
+                         <label  class="col-md-4 col-form-label text-md-right">Isi</label>
+                         <label  class="col-md-8 col-form-label text-md-left">{!! $Artikel->Isi !!}
+                         </label>
+                    </div>
+
                     <div class="form-group row">
                          <label  class="col-md-4 col-form-label text-md-right">Users Id</label>
                          <label  class="col-md-8 col-form-label text-md-left">{!! $Artikel->users_id !!}
                          </label>
                     </div>
 
-                      <div class="form-group row">
+                    <div class="form-group row">
                          <label  class="col-md-4 col-form-label text-md-right">Kategori</label>
-                         <label  class="col-md-8 col-form-label text-md-left">{!! $Artikel->kategori_atikel_id !!}
+                         <label  class="col-md-8 col-form-label text-md-left">{!! $Artikel->kategori_artikel_id !!}
                          </label>
                     </div>
 
@@ -35,12 +41,12 @@
                          <label  class="col-md-8 col-form-label text-md-left">{!! $Artikel->created_at->format('d/m/Y H:i') !!}</label>
                     </div>
 
-                     <div class="form-group row">
+                      <div class="form-group row">
                          <label  class="col-md-4 col-form-label text-md-right">Update</label>
-                         <label  class="col-md-8 col-form-label text-md-left">{!! $Artikel->update_at->format('d/m/Y H:i') !!}</label>
+                         <label  class="col-md-8 col-form-label text-md-left">{!! $Artikel->updated_at->format('d/m/Y H:i') !!}</label>
                     </div>
 
-                     
+                    
 
                     <div class="form-group row mb-0">
                         <div class="col-md-6 offset-md-4">
@@ -55,4 +61,3 @@
     </div>
 </div>
 @endsection
-
