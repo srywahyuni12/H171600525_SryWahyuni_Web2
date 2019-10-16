@@ -8,6 +8,12 @@
                 <div class="card-header">Kategori Artikel</div>
                 <div class="card-body">
                     <a href="{!! route('kategori_artikel.create') !!}" class="btn btn-primary">Tambah Data</a>
+
+                    <a href="{!! route('kategori_artikel.trash') !!}" class="btn btn-danger">Seen delete data</a>
+
+                </div>
+            </div>
+
                 <table class="table table-bordered">
                     <thead class="bg-warning">
                         <tr>

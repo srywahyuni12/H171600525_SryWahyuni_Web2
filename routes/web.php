@@ -20,19 +20,23 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('kategori_artikel','KategoriArtikelController');
 Route::get('kategori_artikel/trash','KategoriArtikelController@trash')->name('kategori_artikel.trash');
+Route::resource('kategori_artikel','KategoriArtikelController');
 
-Route::resource('kategori_berita','KategoriBeritaController');
+
 Route::get('kategori_berita/trash','KategoriBeritaController@trash')->name('kategori_berita.trash');
+Route::resource('kategori_berita','KategoriBeritaController');
 
-Route::resource('kategori_galeri','KategoriGaleriController');
+
 Route::get('kategori_galeri/trash','KategoriGaleriController@trash')->name('kategori_galeri.trash');
+Route::resource('kategori_galeri','KategoriGaleriController');
 
+
+Route::get('kategori_pengumuman/trash','KategoriPengumumanController@trash')->name('kategori_pengumuman.trash');
 Route::resource('kategori_pengumuman','KategoriPengumumanController');
-Route::get('kategori_pengumuman/trash','KategoriPengumumanController@trash')->name('kategori_gpengumuman.trash');
 
 
+Route::get('artikel/trash','artikelController@trash')->name('artikel.trash');
 Route::get('/artikel', 'artikelController@index')->name('artikel.index');
 Route::get('/artikel/create', 'artikelController@create')->name('artikel.create');
 Route::post('/artikel', 'artikelController@store')->name('artikel.store');
@@ -41,6 +45,7 @@ Route::get('/artikel/{id}/edit','artikelController@edit')->name('artikel.edit');
 Route::patch('/artikel/{id}','artikelController@update')->name('artikel.update');
 Route::delete('/artikel/{id}','artikelController@destroy')->name('artikel.destroy');
 
+Route::get('berita/trash','beritaController@trash')->name('berita.trash');
 Route::get('/berita', 'beritaController@index')->name('berita.index');
 Route::get('/berita/create', 'beritaController@create')->name('berita.create');
 Route::post('/berita', 'beritaController@store')->name('berita.store');
@@ -49,6 +54,7 @@ Route::get('/berita/{id}/edit','beritaController@edit')->name('berita.edit');
 Route::patch('/berita/{id}','beritaController@update')->name('berita.update');
 Route::delete('/berita/{id}','beritaController@destroy')->name('berita.destroy');
 
+Route::get('galeri/trash','galeriController@trash')->name('galeri.trash');
 Route::get('/galeri', 'galeriController@index')->name('galeri.index');
 Route::get('/galeri/create', 'galeriController@create')->name('galeri.create');
 Route::post('/galeri', 'galeriController@store')->name('galeri.store');
@@ -57,7 +63,7 @@ Route::get('/galeri/{id}/edit','galeriController@edit')->name('galeri.edit');
 Route::patch('/galeri/{id}','galeriController@update')->name('galeri.update');
 Route::delete('/galeri/{id}','galeriController@destroy')->name('galeri.destroy');
 
-
+Route::get('pengumuman/trash','pengumumanController@trash')->name('pengumuman.trash');
 Route::get('/pengumuman', 'pengumumanController@index')->name('pengumuman.index');
 Route::get('/pengumuman/create', 'pengumumanController@create')->name('pengumuman.create');
 Route::post('/pengumuman', 'pengumumanController@store')->name('pengumuman.store');

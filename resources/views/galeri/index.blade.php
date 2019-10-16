@@ -8,6 +8,12 @@
                 <div class="card-header">Galeri</div>
                 <div class="card-body">
                     <a href="{!! route('galeri.create') !!}" class="btn btn-primary">Tambah Data</a>
+
+                     <a href="{!! route('galeri.trash') !!}" class="btn btn-danger">See delete data</a>
+
+                </div>
+            </div>
+
                 <table class="table table-bordered">
                     <thead class="bg-danger">
                         <tr>
@@ -18,6 +24,7 @@
                         <th scope="col">Kategori</th>
                         <th scope="col">Users_Id</th>
                         <th scope="col">Create</th>
+                         <th scope="col">Update</th>
                         <th scope="col">Aksi</th>
                         </tr>
                     </thead>
@@ -32,6 +39,7 @@
                         <td>{!! $item->kategori_galeri_id !!}</td>
                         <td>{!! $item->users_id !!}</td>
                         <td>{!! $item->created_at->format('d/m/Y H:i:s') !!}</td>
+                        <td>{!! $item->updated_at->format('d/m/Y H:i:s') !!}</td>
                         <td>
                          <a href="{!! route('galeri.show',[$item->id]) !!}"class="btn btn-success">Lihat</a>
 

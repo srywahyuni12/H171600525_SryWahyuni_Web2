@@ -29,6 +29,20 @@
 </div>
 
 <div class="form-group row">
+        <label form ="path" class="col-md-2 col-form-label text-md-right">{{ __('Path') }}</label>
+
+        <div class="col-md-10">
+            {!! Form::text('path', null,['class'=>'form-control']); !!}
+
+            @error('path')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
+        </div>
+</div>
+
+<div class="form-group row">
         <label form ="isi" class="col-md-2 col-form-label text-md-right">{{ __('Isi') }}</label>
 
         <div class="col-md-10">

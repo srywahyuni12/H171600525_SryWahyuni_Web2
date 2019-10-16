@@ -21,11 +21,6 @@ class ArtikelController extends Controller
         //$Artikel=Artikel::where('id',$id)->first();
         $Artikel=Artikel::find($id);
 
-
-        if (empty($listArtikel)){
-            return redirect(route ('artikel.index'));
-        }
-
         return view ('Artikel.show', compact('Artikel'));
         
     }
@@ -74,5 +69,15 @@ class ArtikelController extends Controller
 
         $listArtikel->delete();
         return redirect(route('artikel.index'));
+    }
+
+    public function trash(){
+        
+        $listArtikel=Artikel::onlyTrashed()
+                            ->WhereNotNull('deleted_at')
+                            ->get();
+
+        return view ('artikel.index',compact('listArtikel'));
+        //return view ('kategori_artikel.index'->with('data',$listKategoriArtikel);
     }
 }

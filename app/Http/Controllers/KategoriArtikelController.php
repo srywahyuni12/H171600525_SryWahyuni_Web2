@@ -77,7 +77,9 @@ class KategoriArtikelController extends Controller
 
    public function trash(){
         
-        $listKategoriArtikel=KategoriArtikel::onlyTrashed(); //select * from kategori_artikel
+        $listKategoriArtikel=KategoriArtikel::onlyTrashed()
+                            ->WhereNotNull('deleted_at')
+                            ->get();
 
         return view ('kategori_artikel.index',compact('listKategoriArtikel'));
         //return view ('kategori_artikel.index'->with('data',$listKategoriArtikel);

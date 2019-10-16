@@ -21,11 +21,6 @@ class GaleriController extends Controller
         //$Artikel=Artikel::where('id',$id)->first();
         $Galeri=Galeri::find($id);
 
-
-        if (empty($listGaleri)){
-            return redirect(route ('galeri.index'));
-        }
-
         return view ('galeri.show', compact('Galeri'));
         
     }
@@ -74,5 +69,15 @@ class GaleriController extends Controller
 
         $listGaleri->delete();
         return redirect(route('galeri.index'));
+    }
+
+   public function trash(){
+        
+        $listGaleri=Galeri::onlyTrashed()
+                            ->WhereNotNull('deleted_at')
+                            ->get();
+
+        return view ('galeri.index',compact('listGaleri'));
+        //return view ('kategori_artikel.index'->with('data',$listKategoriArtikel);
     }
 }

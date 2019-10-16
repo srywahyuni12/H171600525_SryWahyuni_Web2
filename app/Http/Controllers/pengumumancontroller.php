@@ -21,11 +21,6 @@ class PengumumanController extends Controller
         //$Artikel=Artikel::where('id',$id)->first();
         $Pengumuman=Pengumuman::find($id);
 
-
-        if (empty($listPengumuman)){
-            return redirect(route ('pengumuman.index'));
-        }
-
         return view ('Pengumuman.show', compact('Pengumuman'));
         
     }
@@ -74,5 +69,15 @@ class PengumumanController extends Controller
 
         $listPengumuman->delete();
         return redirect(route('pengumuman.index'));
+    }
+
+public function trash(){
+        
+        $listPengumuman=Pengumuman::onlyTrashed()
+                            ->WhereNotNull('deleted_at')
+                            ->get();
+
+        return view ('pengumuman.index',compact('listPengumuman'));
+        //return view ('kategori_artikel.index'->with('data',$listKategoriArtikel);
     }
 }

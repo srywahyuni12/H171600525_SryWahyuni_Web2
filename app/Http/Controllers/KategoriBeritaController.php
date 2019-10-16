@@ -77,7 +77,10 @@ class KategoriBeritaController extends Controller
 
    public function trash(){
         
-        $listKategoriBerita=KategoriBerita::onlyTrashed(); //select * from kategori_artikel
+        $listKategoriBerita=KategoriBerita::onlyTrashed()
+                           ->WhereNotNull('deleted_at')
+                           ->get(); 
+
 
         return view ('kategori_berita.index',compact('listKategoriBerita'));
         //return view ('kategori_artikel.index'->with('data',$listKategoriArtikel);

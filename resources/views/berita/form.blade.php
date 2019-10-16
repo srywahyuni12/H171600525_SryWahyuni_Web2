@@ -15,7 +15,7 @@
 </div>
 
 <div class="form-group row">
-    <label form ="kategori_berita_id" class="col-md-2 col-form-label text-md-right">{{ __('Kategori Berita') }}</label>
+    <label form ="kategori_artikel_id" class="col-md-2 col-form-label text-md-right">{{ __('Kategori Berita') }}</label>
 
         <div class="col-md-10">
             {!! Form::select('kategori_berita_id', $listKategoriBerita, null, ["class"=>"form-control","required"] ) !!}
@@ -49,7 +49,7 @@
             <button type="submit" class="btn btn-primary">
                 {{ __('Simpan Data') }}
             </button>
-            <a href="{!! route('berita.index')!!}" class="btn btn-danger">
+            <a href="{!! route('artikel.index')!!}" class="btn btn-danger">
                 {{ __('Batal') }}
             </a>
     </div>
